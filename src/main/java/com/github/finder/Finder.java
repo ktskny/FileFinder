@@ -42,13 +42,13 @@ public class Finder {
     private boolean checkGrep(File file, String pattern){
         if(file.isFile()){
             try(BufferedReader in = new BufferedReader(new FileReader(file))){
-                String line;
-                while((line = in.readLine()) != null){
-                    if(line.indexOf(pattern) >= 0){
-                        return true;
-                    }
-                }
-            }
+		    String line;
+		    while((line = in.readLine()) != null){
+			if(line.indexOf(pattern) >= 0){
+			    return true;
+			}
+		    }
+		}catch(Exception e){}
         }
         return false;
     }
